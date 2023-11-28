@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nuevo Producto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Boostrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+        <!-- Custom styles for this template -->
+        <link href="../sidebars.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <link href="../menu.css" rel="stylesheet">
+
+        <script src="../sidebars.js"></script>
+        <script src="../assets/js/color-modes.js"></script>
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+
+        <div th:replace="tema_icono :: svg"></div>    
+
+        <div th:replace="tema :: div"></div>
+
+        <div th:replace="iconos :: svg"></div>
+
+        <main class="d-flex flex-nowrap">
+            <h1 class="visually-hidden">Sidebars examples</h1>
+
+            <div th:replace="menu :: div"></div>
+
+            <div class="container">
+
+                <hr>
+                <div class="alert alert-primary" role="alert">
+                    Nuevo Producto
+                </div>
+                <hr>
+
+                <form action="/producto/registrar" method="post" class="row g-3">
+
+                    <!--<div class="col-md-2">
+                        <label class="form-label">Código</label>
+                        <input type="number" class="form-control" name="cod">
+                    </div>-->
+
+                    <div class="col-md-5">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="nom" placeholder="Nombre">
+                    </div>
+
+                    <div class="col-md-5">
+                        <label class="form-label">Descripción</label>
+                        <input type="text" class="form-control" name="desc" placeholder="Descripción">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Precio Compra</label>
+                        <input type="text" class="form-control" name="prec" placeholder="Precio">
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <label class="form-label">Precio Venta</label>
+                        <input type="text" class="form-control" name="prev" placeholder="Precio">
+                    </div>
+
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <a th:href="@{/producto/}" class="btn btn-primary" >Ver lista</a>
+                    </div>
+
+                </form>
+
+            </div>    
+        </main>
+    </body>
+</html>
